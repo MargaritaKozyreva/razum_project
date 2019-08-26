@@ -1,0 +1,102 @@
+body {
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+}
+
+
+.card-wrapper {
+    position: relative;
+    width: 350px;
+    height: 476px;
+    border-radius: 10px;
+    box-shadow: 0 2px 70px 0 rgba(0, 0, 0, 0.09);
+    background-color: #ffffff;
+}
+
+.card-wiew {
+    position: relative;
+    width: 350px;
+    height: 208px;
+    background: cadetblue;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card-wiew div {
+    position: absolute;
+    top: 17px;
+    left: -7px;
+    padding-top: 4px;
+    padding-left: 3px;
+    width: 164px;
+    height: 34px;
+    border-radius: 4px;
+    background-color: #f4705a;
+}
+
+.card-wiew span:first-child {
+    width: 54.6px;
+    height: 15px;
+    opacity: 0.5;
+    font-size: 17px;
+    color: #ffffff;
+}
+
+.card-wiew span:nth-child(2) {
+    width: 91px;
+    height: 15px;
+    font-size: 17px;
+    color: #ffffff;
+}
+
+.card-info {
+    margin-top: 18px;
+    margin-left: 18px;
+}
+
+.card-info .card-level-urgent {
+    width: max-content;
+    height: 34px;
+    border-radius: 17.5px;
+    background-color: #fff1d5;
+    text-align: center;
+    padding: 10px 15px;
+}
+
+.card-info .card-level-urgent span {
+    color: #e2bd74;
+}
+
+.card-time-wrapper {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    color: #989898;
+}
+
+.card-title {
+    margin-top: 9px;
+    width: 309px;
+    height: 72px;
+    font-size: 32px;
+    color: #282828;
+}
+
+.card-progress-wrapper {
+    position: absolute;
+    bottom: 30px;
+}
+
+.card-progress-wrapper button {
+    margin-top: 17px;
+    width: 180px;
+    height: 42px;
+    color: #282828;
+    border-radius: 100px;
+    box-shadow: 0 6px 5px 0 rgba(116, 52, 0, 0.4), 0 4px 0 0 #ffdbab, 0 3px 0 0 #ebb26a;
+    background-image: linear-gradient(to bottom, #f8c25b, #fdd06a);
+}
