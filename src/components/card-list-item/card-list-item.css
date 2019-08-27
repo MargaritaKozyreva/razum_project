@@ -9,16 +9,15 @@ body {
 
 .card-wrapper {
     position: relative;
-    width: 350px;
+    width: 100%;
     height: 476px;
     border-radius: 10px;
-    box-shadow: 0 2px 70px 0 rgba(0, 0, 0, 0.09);
+    box-shadow: 1px 11px 8px 0 rgba(0, 0, 0, 0.09);
     background-color: #ffffff;
 }
 
 .card-wiew {
     position: relative;
-    width: 350px;
     height: 208px;
     background: cadetblue;
     border-top-left-radius: 10px;
@@ -34,7 +33,22 @@ body {
     width: 164px;
     height: 34px;
     border-radius: 4px;
-    background-color: #f4705a;
+}
+
+.card-wiew .c_progress {
+    background-color: #f5b800;
+}
+
+.card-wiew .c_success {
+    background-color: #6bca6b;
+}
+
+.card-wiew .c_assigned {
+    background-color: #989898;
+}
+
+.card-wiew .c_fail {
+    background-color: tomato;
 }
 
 .card-wiew span:first-child {
@@ -87,8 +101,12 @@ body {
 }
 
 .card-progress-wrapper {
-    position: absolute;
     bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin-right: 0;
+    align-items: baseline;
 }
 
 .card-progress-wrapper button {
@@ -99,4 +117,42 @@ body {
     border-radius: 100px;
     box-shadow: 0 6px 5px 0 rgba(116, 52, 0, 0.4), 0 4px 0 0 #ffdbab, 0 3px 0 0 #ebb26a;
     background-image: linear-gradient(to bottom, #f8c25b, #fdd06a);
+}
+
+.card-progress-wrapper div {
+    width: 65px;
+}
+
+.CircularProgressbar .CircularProgressbar-path {
+    /* stroke: yellow; */
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0.5s ease 0s;
+}
+
+.stroke_c_progress {
+    stroke: #f5b800;
+}
+
+.stroke_c_success {
+    stroke: #6bca6b;
+}
+
+.stroke_c_assigned {
+    stroke: #989898;
+}
+
+.stroke_c_fail {
+    stroke: tomato;
+}
+
+.CircularProgressbar .CircularProgressbar-text {
+    fill: #585858;
+    font-size: 23px;
+    dominant-baseline: middle;
+    text-anchor: middle;
+}
+
+.card-progress-wrapper button:focus {
+    outline: 1px dotted;
+    outline: none;
 }

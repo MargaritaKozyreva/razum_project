@@ -41,6 +41,17 @@ export default class Service {
             title: "Course - 4",
             url: "/photo/3",
             timeLimit: 55,
+            state: 3,
+            progress: 15,
+            is_required: true,
+            deadline: "19.09.2019"
+          },
+          {
+            id: 645764657456758,
+            type: "course",
+            title: "Course - 5",
+            url: "/photo/3",
+            timeLimit: 55,
             state: 4,
             progress: 100,
             is_required: true,
@@ -78,6 +89,17 @@ export default class Service {
           progress: false,
           is_required: false,
           startDate: "03.09.2019"
+        },
+        {
+          id: 432564876654754,
+          type: "training",
+          title: "training - 4",
+          url: "/photo/4",
+          timeLimit: false,
+          state: 4,
+          progress: false,
+          is_required: false,
+          startDate: "09.09.2019"
         },
         {
           id: 564577567658958,
@@ -154,12 +176,12 @@ export default class Service {
       let changeStatus = data => {
         let status = "";
         switch (data.state) {
-          case 0:
-            status = "Назначен";
+          case 0: 
+            status = "Назначен"; 
             break;
 
           case 1:
-            status = "В процессе";
+            status = "В процессе"; 
             break;
 
           case 3:
@@ -176,6 +198,31 @@ export default class Service {
         return status;
       };
 
+      let setClass = data => {
+        let statusClass = "";
+        switch (data.state) {
+          case 0: 
+            statusClass = "c_assigned"
+            break;
+
+          case 1:
+            statusClass = "c_progress"
+            break;
+
+          case 3:
+            statusClass = "c_fail"
+            break;
+
+          case 4:
+            statusClass = "c_success"
+            break;
+
+          default:
+            statusClass = ""
+        }
+        return statusClass;
+      };
+
       return {
         id: data.id,
         type: data.type,
@@ -183,6 +230,7 @@ export default class Service {
         url: data.url,
         timeLimit: data.timeLimit,
         state: changeStatus(data),
+        status_class: setClass(data),
         progress: data.progress,
         is_required:
         data.is_required === true ? "Обязательный" : "Рекомендованный",
@@ -215,6 +263,31 @@ export default class Service {
           }
           return status;
         };
+
+        let setClass = data => {
+          let statusClass = "";
+          switch (data.state) {
+            case 0: 
+              statusClass = "c_assigned"
+              break;
+  
+            case 1:
+              statusClass = "c_progress"
+              break;
+  
+            case 3:
+              statusClass = "c_fail"
+              break;
+  
+            case 4:
+              statusClass = "c_success"
+              break;
+  
+            default:
+              statusClass = ""
+          }
+          return statusClass;
+        };
   
         return {
             id: data.id,
@@ -223,19 +296,72 @@ export default class Service {
             url: data.url,
             timeLimit: data.timeLimit,
             state: changeStatus(data),
+            status_class: setClass(data),
             progress: data.progress,
             dealine: data.deadline
         };
       }
 
     if (data.type === "training") {
+
+      let changeStatus = data => {
+        let status = "";
+        switch (data.state) {
+          case 0:
+            status = "Назначен";
+            break;
+
+          case 1:
+            status = "В процессе";
+            break;
+
+          case 3:
+            status = "Не пройден";
+            break;
+
+          case 4:
+            status = "Выполнен";
+            break;
+
+          default:
+            status = "";
+        }
+        return status;
+      };
+
+      let setClass = data => {
+        let statusClass = "";
+        switch (data.state) {
+          case 0: 
+            statusClass = "c_assigned"
+            break;
+
+          case 1:
+            statusClass = "c_progress"
+            break;
+
+          case 3:
+            statusClass = "c_fail"
+            break;
+
+          case 4:
+            statusClass = "c_success"
+            break;
+
+          default:
+            statusClass = ""
+        }
+        return statusClass;
+      };
+
       return {
         id: data.id,
         type: data.type,
         title: data.title,
         url: data.url,
         timeLimit: data.timeLimit,
-        state: data.state,
+        state: changeStatus(data),
+        status_class: setClass(data),
         progress: data.progress,
         is_required: data.is_required === true ? "Обязательный" : "Рекомендованный",
         startDate: data.startDate

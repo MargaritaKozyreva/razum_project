@@ -1,7 +1,38 @@
-.card-section-wrapper{
+.card-section-wrapper {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
     flex-wrap: wrap;
+}
+
+.card-section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline
+}
+
+.card-section-title .title-icon {
+    margin-right: 10px;
+}
+
+.card-section-title div {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline
+}
+
+.card-section-title a {
+    align-items: flex-end;
+    width: 158px;
+    height: 30px;
+    font-family: OfficinaSerifC;
+    font-size: 19px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.58;
+    letter-spacing: normal;
+    text-align: center;
+    color: #f6a000;
 }

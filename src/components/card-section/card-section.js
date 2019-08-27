@@ -1,39 +1,53 @@
-import React from 'react';
-import './card-section.css'
+import React from "react";
+import TitleIcon from "../card-section-icons/card-section-icons";
+import MultipleItems from "../slider/slider";
 
-const CardSection = (props) => {
-    const {title, elems} = props;
+import "./card-section.css";
 
-    let giveRussianTitle = () => {
-        let r_title = '';
+const CardSection = props => {
+  const { title, elems } = props;
 
-        switch (title) {
-            case 'training' : r_title = 'Тренинги';
-            break;
+  let giveRussianTitle = () => {
+    let r_title = "";
 
-            case 'course' : r_title = 'Курсы';
-            break;
+    switch (title) {
+      case "training":
+        r_title = "Тренинги";
+        break;
 
-            case 'test' : r_title = 'Тесты';
-            break;
+      case "course":
+        r_title = "Курсы";
+        break;
 
-            case 'post-training' : r_title = 'Отработка навыка';
-            break;
-        }
+      case "test":
+        r_title = "Тесты";
+        break;
 
-        return r_title;
+      case "post-training":
+        r_title = "Отработка навыка";
+        break;
+
+      default:
+        r_title = "Title";
     }
 
-    return(
-        <div>
-            <h1>{giveRussianTitle(title)}</h1>
-            <div className="card-section-wrapper">
-                {elems}
-            </div>
+    return r_title;
+  };
 
+  return (
+    <div>
+      <div className="card-section-title">
+        <div>
+          <TitleIcon title={title} className="title-icon" />
+          <h1>{giveRussianTitle(title)}</h1>
         </div>
 
-    )
-}
+        <a href="/">Смотреть все курсы</a>
+      </div>
+
+      <MultipleItems elems={elems} title={title} />
+    </div>
+  );
+};
 
 export default CardSection;

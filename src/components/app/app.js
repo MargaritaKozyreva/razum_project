@@ -44,6 +44,6 @@ export default class App extends Component {
 
   render() {
     const { data, sections, loading } = this.state;
-    return <CardList items={data} sections={sections}/>;
+    return <CardList items={data} sections={sections}/>
   }
 }

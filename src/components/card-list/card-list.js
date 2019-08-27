@@ -13,7 +13,7 @@ const cardList = props => {
         .filter(i => i.type === item.name)
         .map(elem => <CardListItem elem={elem} key={elem.id} />);
 
-      return <CardSection title={item.name} elems={elems} />;
+      return <CardSection title={item.name} elems={elems} />
     }
   });
 
